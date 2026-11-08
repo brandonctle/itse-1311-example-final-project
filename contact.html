@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact Johnny Appleseed about orchard tours, workshops, or apple questions.">
+    <title>Contact | Johnny Appleseed</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;display=swap">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="" width="48" height="48">
+                <span>Johnny Appleseed</span>
+            </a>
+            <nav aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="varieties.html">Varieties</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="orchards.html">Orchards</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Me</h1>
+
+        <div class="two-col">
+            <div>
+                <p>Questions about apples, or want to book an orchard workshop? Send me a message.</p>
+
+                <!-- This sample has no server, so the form just reloads the page.
+                     A real site needs a server to process (and re-validate) the data. -->
+                <form action="#" method="get">
+                    <fieldset>
+                        <legend>About you</legend>
+
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="999-999-9999"
+                               pattern="\d{3}-\d{3}-\d{4}" title="Use the format 999-999-9999">
+                        <span class="hint">Format: 999-999-9999</span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Your request</legend>
+
+                        <label for="topic">Topic</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">Choose one</option>
+                            <option value="workshop">Book a workshop</option>
+                            <option value="tour">Orchard tour</option>
+                            <option value="question">General apple question</option>
+                        </select>
+
+                        <label for="visit-date">Preferred date</label>
+                        <input type="date" id="visit-date" name="visit_date">
+
+                        <p><strong>Favorite apple type</strong></p>
+                        <input type="radio" id="sweet" name="taste" value="sweet" checked>
+                        <label class="inline" for="sweet">Sweet</label>
+                        <input type="radio" id="tart" name="taste" value="tart">
+                        <label class="inline" for="tart">Tart</label>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <p>
+                            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                            <label class="inline" for="newsletter">Send me the monthly apple newsletter</label>
+                        </p>
+                    </fieldset>
+
+                    <button type="submit">Send message</button>
+                    <button type="reset">Clear</button>
+                </form>
+            </div>
+
+            <aside>
+                <h2>Other Ways to Reach Me</h2>
+                <ul>
+                    <li>Email: <a href="mailto:johnny@example.com">johnny@example.com</a></li>
+                    <li>Phone: <a href="tel:555-555-0123">555-555-0123</a></li>
+                    <li>Workshops: Saturdays, 9 a.m. to noon</li>
+                </ul>
+                <p class="hint">All contact details on this sample site are made up.</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Johnny Appleseed (a sample persona for ISTE 1311). All content is made up.</p>
+    </footer>
+</body>
+</html>

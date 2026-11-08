@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Johnny Appleseed's favorite apple recipes, including classic apple pie and an easy apple crisp.">
+    <title>Apple Recipes | Johnny Appleseed</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;display=swap">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="" width="48" height="48">
+                <span>Johnny Appleseed</span>
+            </a>
+            <nav aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="varieties.html">Varieties</a></li>
+                    <li><a href="recipes.html" aria-current="page">Recipes</a></li>
+                    <li><a href="orchards.html">Orchards</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Apple Recipes</h1>
+        <p>Jump to a recipe: <a href="#pie">Classic Apple Pie</a> &middot; <a href="#crisp">Easy Apple Crisp</a></p>
+
+        <div class="two-col">
+            <div>
+                <article id="pie">
+                    <h2>Classic Apple Pie</h2>
+                    <h3>Ingredients</h3>
+                    <ul class="apple-list">
+                        <li>6 Granny Smith apples, peeled and sliced</li>
+                        <li>3/4 cup sugar</li>
+                        <li>1 tsp cinnamon</li>
+                        <li>2 pie crusts</li>
+                    </ul>
+                    <h3>Steps</h3>
+                    <ol class="steps">
+                        <li>Heat the oven to 425&deg;F.</li>
+                        <li>Toss the apples with sugar and cinnamon.</li>
+                        <li>Fill the bottom crust, then add the top crust.</li>
+                        <li>Bake for 45 minutes until golden.</li>
+                    </ol>
+                </article>
+
+                <article id="crisp">
+                    <h2>Easy Apple Crisp</h2>
+                    <ol class="steps lettered">
+                        <li>Slice 4 apples into a baking dish.</li>
+                        <li>Mix oats, brown sugar, flour, and butter.</li>
+                        <li>Crumble the topping over the apples.</li>
+                        <li>Bake at 350&deg;F for 35 minutes.</li>
+                    </ol>
+                </article>
+
+                <p><a href="#top">Back to top</a></p>
+            </div>
+
+            <aside>
+                <figure>
+                    <img src="images/apple-pie.svg" alt="A golden apple pie with a lattice crust" width="400" height="300">
+                    <figcaption>My grandmother's lattice-top pie</figcaption>
+                </figure>
+                <h3>Tip</h3>
+                <p>Mix tart and sweet apples in one pie for the best flavor.</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Johnny Appleseed (a sample persona for ISTE 1311). All content is made up.</p>
+    </footer>
+</body>
+</html>

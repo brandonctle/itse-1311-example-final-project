@@ -1,0 +1,418 @@
+/* ==========================================================
+   Johnny Appleseed Portfolio - main stylesheet
+   One external stylesheet shared by every page (Ch 4)
+   ========================================================== */
+
+/* ---------- Custom properties / CSS variables (Ch 4) ---------- */
+:root {
+    --apple-red: #b3261e;
+    --apple-dark: #7a1712;
+    --leaf-green: #2e6b30;
+    --cream: #fdf8f0;
+    --wood: #6b4f3a;
+    --text: #2b2b2b;
+    --white: #ffffff;
+    --heading-font: "Merriweather", Georgia, serif;
+    --body-font: "Segoe UI", Arial, Helvetica, sans-serif;
+    --max-width: 1100px;
+}
+
+/* ---------- Reset selector (Ch 5) ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Base type ---------- */
+body {
+    font-family: var(--body-font);
+    font-size: 100%;          /* relative font sizes (Ch 4) */
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--cream);
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--apple-dark);
+    line-height: 1.25;
+    margin-bottom: .5em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.6rem; margin-top: 1.25em; }
+h3 { font-size: 1.2rem; }
+
+p { margin-bottom: 1em; }
+
+img {
+    max-width: 100%;          /* scalable images (Ch 6) */
+    height: auto;
+    display: block;
+}
+
+/* ---------- Links and link states (Ch 9) "LoVe HAte" ---------- */
+a:link { color: var(--apple-red); }
+a:visited { color: var(--apple-dark); }
+a:hover,
+a:focus { color: var(--leaf-green); }
+a:active { color: var(--wood); }
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--leaf-green);
+    outline-offset: 2px;
+}
+
+/* ---------- Header + flexbox navigation (Ch 6, 7) ---------- */
+header {
+    background-color: var(--apple-red);
+    background-image: linear-gradient(to right, #b3261e, #7a1712);
+    color: var(--white);
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    text-decoration: none;
+}
+
+.brand:link,
+.brand:visited { color: var(--white); }
+
+.brand img { width: 48px; }
+
+.brand span {
+    font-family: var(--heading-font);
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem;
+}
+
+nav a {
+    display: block;
+    padding: .5rem .85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color .2s ease;   /* "Go further" (Ch 15) */
+}
+
+nav a:link,
+nav a:visited { color: var(--white); }
+
+nav a:hover,
+nav a:focus { background-color: rgba(255, 255, 255, .2); color: var(--white); }
+
+/* Shows visitors which page they are on */
+nav a[aria-current="page"] {
+    background-color: var(--white);
+    color: var(--apple-red);
+}
+
+/* ---------- Main content ---------- */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+/* Hero banner on the home page */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--white);
+    border: 1px solid #e6dccd;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+.hero > * { flex: 1; }
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--wood);
+}
+
+.button {
+    display: inline-block;
+    padding: .7rem 1.4rem;
+    border-radius: 999px;
+    background-color: var(--leaf-green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button:link,
+.button:visited { color: var(--white); }
+
+.button:hover,
+.button:focus { background-color: var(--apple-dark); color: var(--white); }
+
+/* ---------- Cards: a flexbox multi-column layout (Ch 6) ---------- */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1 1 250px;
+    background-color: var(--white);
+    border-top: 6px solid var(--apple-red);
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    transition: transform .2s ease;
+}
+
+.card:hover { transform: translateY(-4px); }
+
+.card img { margin-bottom: .75rem; border-radius: 6px; }
+
+/* ---------- Two-column layout with an aside ---------- */
+.two-col {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.two-col > :not(aside) { flex: 2; }
+
+.two-col > aside {
+    flex: 1;
+    background-color: var(--white);
+    border-left: 6px solid var(--leaf-green);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.two-col > aside > :first-child { margin-top: 0; }
+
+/* ---------- Lists (Ch 9) ---------- */
+main ul,
+main ol { padding-left: 1.5rem; margin-bottom: 1em; }
+
+main li { margin-bottom: .35em; }
+
+ul.apple-list { list-style-type: square; }
+ol.steps { list-style-type: decimal; }
+ol.steps.lettered { list-style-type: lower-alpha; }
+
+dl dt { font-weight: bold; color: var(--apple-dark); }
+dl dd { margin: 0 0 .75em 1.25rem; }
+
+/* ---------- Figures (Ch 10) ---------- */
+figure {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: .75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+figcaption {
+    font-size: .9rem;
+    color: var(--wood);
+    text-align: center;
+    padding-top: .5rem;
+}
+
+.portrait { max-width: 320px; }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.gallery figure { flex: 1 1 280px; }
+
+/* ---------- Accessible data table (Ch 11) ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    margin: 1rem 0;
+}
+
+caption {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    text-align: left;
+    padding: .5rem 0;
+    color: var(--apple-dark);
+}
+
+th, td {
+    padding: .6rem .8rem;
+    border-bottom: 1px solid #e6dccd;
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--apple-red);
+    color: var(--white);
+}
+
+tbody tr:nth-child(even) { background-color: #fbf1e6; }  /* structural pseudo-class */
+
+td.num { text-align: right; }
+
+tfoot td {
+    font-style: italic;
+    font-size: .9rem;
+}
+
+/* ---------- Contact form (Ch 12) ---------- */
+form {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    max-width: 640px;
+}
+
+fieldset {
+    border: 1px solid #e6dccd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--apple-dark);
+    padding: 0 .4rem;
+}
+
+label { display: block; font-weight: 600; margin-top: .75rem; }
+
+label.inline { display: inline; font-weight: normal; margin: 0 1rem 0 .25rem; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: .55rem;
+    border: 1px solid #b9ab98;
+    border-radius: 6px;
+    font: inherit;
+}
+
+/* Style fields by validation state */
+input:required:valid { border-color: var(--leaf-green); }
+input:focus:invalid { border-color: var(--apple-red); }
+
+.hint { font-size: .85rem; color: var(--wood); }
+
+button {
+    margin-top: 1rem;
+    padding: .7rem 1.6rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--leaf-green);
+    color: var(--white);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="reset"] { background-color: var(--wood); }
+
+button:hover { background-color: var(--apple-dark); }
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--wood);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: .9rem;
+}
+
+footer a:link,
+footer a:visited { color: var(--white); }
+
+/* ==========================================================
+   Responsive design: media queries (Ch 8)
+   Desktop-first, with breakpoints where the layout breaks
+   ========================================================== */
+
+/* Tablets and small laptops */
+@media (max-width: 900px) {
+    .hero,
+    .two-col {
+        flex-direction: column;
+    }
+
+    .header-inner { justify-content: center; }
+    nav ul { justify-content: center; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    h1 { font-size: 1.75rem; }
+
+    main { padding: 1.25rem 1rem 2rem; }
+
+    nav ul { flex-direction: column; width: 100%; text-align: center; }
+
+    .hero { padding: 1.25rem; }
+
+    /* Responsive table: stack each row into a card (Ch 11) */
+    table thead { display: none; }
+
+    table,
+    table tbody,
+    table tr,
+    table th,
+    table td { display: block; width: 100%; }
+
+    tbody tr {
+        border: 1px solid #e6dccd;
+        border-radius: 8px;
+        margin-bottom: .75rem;
+    }
+
+    tbody th { background-color: var(--apple-red); color: var(--white); }
+
+    td.num { text-align: left; }
+
+    table caption { display: block; width: 100%; }
+
+    tfoot tr { border: none; }
+
+    tbody td::before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+    }
+}

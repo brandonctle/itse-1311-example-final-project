@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Compare popular apple varieties by flavor, texture, and best use.">
+    <title>Apple Varieties | Johnny Appleseed</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;display=swap">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="" width="48" height="48">
+                <span>Johnny Appleseed</span>
+            </a>
+            <nav aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="varieties.html" aria-current="page">Varieties</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="orchards.html">Orchards</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Apple Varieties</h1>
+        <p>There are more than 7,500 apple varieties in the world. Here are six I always keep in my kitchen, and what each one is best for.</p>
+
+        <!-- Accessible data table: caption, th, scope (Ch 11) -->
+        <table>
+            <caption>My six favorite apple varieties</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Variety</th>
+                    <th scope="col">Flavor</th>
+                    <th scope="col">Texture</th>
+                    <th scope="col">Best for</th>
+                    <th scope="col">My rating (out of 5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Honeycrisp</th>
+                    <td data-label="Flavor">Sweet, slightly tart</td>
+                    <td data-label="Texture">Very crisp</td>
+                    <td data-label="Best for">Eating fresh</td>
+                    <td data-label="Rating" class="num">5</td>
+                </tr>
+                <tr>
+                    <th scope="row">Granny Smith</th>
+                    <td data-label="Flavor">Tart</td>
+                    <td data-label="Texture">Firm</td>
+                    <td data-label="Best for">Pies</td>
+                    <td data-label="Rating" class="num">4</td>
+                </tr>
+                <tr>
+                    <th scope="row">Gala</th>
+                    <td data-label="Flavor">Mild, sweet</td>
+                    <td data-label="Texture">Crisp</td>
+                    <td data-label="Best for">Lunchboxes</td>
+                    <td data-label="Rating" class="num">4</td>
+                </tr>
+                <tr>
+                    <th scope="row">Fuji</th>
+                    <td data-label="Flavor">Very sweet</td>
+                    <td data-label="Texture">Juicy</td>
+                    <td data-label="Best for">Salads</td>
+                    <td data-label="Rating" class="num">4</td>
+                </tr>
+                <tr>
+                    <th scope="row">McIntosh</th>
+                    <td data-label="Flavor">Tangy</td>
+                    <td data-label="Texture">Soft</td>
+                    <td data-label="Best for">Applesauce</td>
+                    <td data-label="Rating" class="num">3</td>
+                </tr>
+                <tr>
+                    <th scope="row">Pink Lady</th>
+                    <td data-label="Flavor">Sweet-tart</td>
+                    <td data-label="Texture">Dense</td>
+                    <td data-label="Best for">Baking</td>
+                    <td data-label="Rating" class="num">5</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Ratings are my personal opinion. Try them all!</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>How to Pick a Good Apple</h2>
+        <ul class="apple-list">
+            <li>Choose apples that feel firm and heavy for their size.</li>
+            <li>Skip apples with soft spots or wrinkled skin.</li>
+            <li>Store apples in the fridge to keep them crisp for weeks.</li>
+        </ul>
+
+        <p>Want to go deeper? The <a href="https://usapple.org/apple-varieties" target="_blank" rel="noopener">USApple variety guide</a> covers dozens more (opens in a new tab).</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Johnny Appleseed (a sample persona for ISTE 1311). All content is made up.</p>
+    </footer>
+</body>
+</html>
